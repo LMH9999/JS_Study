@@ -1,0 +1,43 @@
+<div></div>
+<button id="버튼">버튼</button>
+
+<script>
+
+    var 함수 = (a) => {
+        return a + 10;
+    }
+
+    함수(5);
+
+    //파라미터 1개면 소괄호 생략가능
+    //코드가 한줄이면 중괄호와 리턴도 생략 가능
+    var 함수2 = a => a + 10;
+
+    함수2(10);
+
+    
+    
+    [1,2,3,4].forEach(function(a){
+        console.log(a);
+    });
+
+    [1,2,3,4].forEach( a => console.log(a));
+    
+    
+    // Arrow 함수는 함수 내의 this값을 변경해주지 않음
+    document.getElementById('버튼').addEventListener('click', (e)=>{
+        console.log(this); // window 값이 나옴
+        
+        console.log(e.currentTarget); // 그래서 currentTarget을 사용
+    })
+
+    var 오브젝트 = {
+        함수 : () => {
+            return this
+        }
+    }
+
+    오브젝트.함수();
+
+
+</script>
